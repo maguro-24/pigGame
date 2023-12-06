@@ -5,6 +5,5 @@ public class Pig {
     Game game = new Game("asf","asdfs");
     game.play();
     
-    
     }
         
