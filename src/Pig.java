@@ -25,20 +25,10 @@ public class Pig {
             System.out.println("Enter player 2's name: ");
             z = scan.nextLine();
         
-            Game game = new Game(y,z);
+            Game game = new Game(y , z);
             while (true)
             {             
-                 System.out.println("type roll to roll\ntype quit to quit");
-                 String play = scan.nextLine();
-                 if(play.equalsIgnoreCase("quit"))
-                 {
-                     System.exit(0);
-                 }
-                 else if(!play.equalsIgnoreCase("roll"))
-                 {
-                     game.play();
-                 }
-                     
+                 game.play();
             }
             
         }

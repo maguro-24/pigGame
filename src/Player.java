@@ -20,7 +20,7 @@ public class Player {
    {
        dice.roll();
       
-       System.out.println("player " + name + ": " + dice);
+       System.out.println("player " + name + ": " + dice.getSum());
       
        if (dice.isSnakeEyes())
        {
@@ -34,6 +34,31 @@ public class Player {
            System.out.println(name+ " score cleared");
        }
            round = dice.getSum();
+       
+   }
+   
+   public int GetBank()
+   {
+       return bank;
+   }
+           
+   
+   public void CompTurn(Player other)
+   {
+      Turn();
+      if (GetBank() >= bank)
+      {
+          Turn();
+      }
+      else if (dice.getSum()>= 20)
+      {
+         store();
+      }
+      else
+      {
+          Turn();
+      }
+  
    }
    
    public void store()
