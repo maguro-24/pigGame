@@ -28,6 +28,9 @@ public class PairOfDice {
     public boolean isBoxCar(){
         return getSum() == 12;
     }
+    public boolean hasOne(){
+        return die1.getFace() == 1 || die2.getFace()==1;
+    }
 
     public String toString() {
         return "" + die1.getFace() + " " + die2.getFace();

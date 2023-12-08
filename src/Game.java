@@ -18,6 +18,5 @@ public class Game {
         p1.Turn();
         p2.Turn();
     }
-        
 
 }
