@@ -6,7 +6,7 @@ public class Player {
    private int bank,round;
    private String name;
    private Scanner scan = new Scanner(System.in);
-   private boolean Win;
+   private boolean Win,turn;
    
    public Player(String n)
    {
@@ -20,7 +20,7 @@ public class Player {
    {
        dice.roll();
       
-       System.out.println("player " + name + ": " + dice.getSum());
+      
       
        if (dice.isSnakeEyes())
        {
@@ -31,9 +31,11 @@ public class Player {
        else if (dice.hasOne())
        {
            round = 0;
-           System.out.println(name+ " score cleared");
+           System.out.println(name+ " round score cleared");
        }
            round = dice.getSum();
+           System.out.println("player " + name + ": " + dice.getSum());
+           System.out.println(bank);
        
    }
    
@@ -49,14 +51,21 @@ public class Player {
       if (GetBank() >= bank)
       {
           Turn();
+         
+
       }
       else if (dice.getSum()>= 20)
       {
          store();
+         
+
       }
       else
       {
           Turn();
+          System.out.println("player " + name + ": " + dice.getSum());
+           System.out.println(bank);
+
       }
   
    }
@@ -72,6 +81,15 @@ public class Player {
        if(bank == 100)
        {
            Win=true;
+       }
+   }
+   
+   public void TurnEnd()
+   {
+       turn = false;
+       while (turn = false)
+       {
+           Turn();
        }
    }
    

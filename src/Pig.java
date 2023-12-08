@@ -28,7 +28,26 @@ public class Pig {
             Game game = new Game(y , z);
             while (true)
             {             
-                 game.play();
+                 System.out.println("roll, quit");
+                 String roll = scan.nextLine();
+                 if(roll.equalsIgnoreCase("roll"))
+                 {
+                     game.play();
+                     boolean after;
+                     while(after = true)
+                     {
+                     System.out.println("store? y/n");
+                     String n = scan.nextLine();
+                     if(n.equalsIgnoreCase("y"))
+                     {
+                         game.store();
+                         
+                     }
+                     game.play();
+                     
+                     }
+                     game.computer();
+                 }
             }
             
         }

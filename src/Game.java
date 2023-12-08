@@ -16,12 +16,18 @@ public class Game {
     public void play()
     {
         p1.Turn();
-        p2.Turn();
+    
+    }
+    
+    public void store()
+    {
+        p1.store();
     }
     
     public void computer()
     {
       p2.CompTurn(p1);
+        System.out.println("turn");
     }
 
 }
